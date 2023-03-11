@@ -1,0 +1,10 @@
+.idea
+.project
+.buildpath
+.settings/
+*.iml
+.vs
+obj/
+VanillaWarlock/Build
+*.dll
+*.pdb

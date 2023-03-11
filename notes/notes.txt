@@ -1,0 +1,26 @@
+found references:
+
+Sowelu, thank him for posting solution
+https://wrobot.eu/forums/topic/12115-load-pathxml-to-list/
+
+
+
+A
+Position = 5256.173 ; -717.0386 ; 343.0444 ; "None"
+
+
+B
+Position = 5225.986 ; -716.8392 ; 342.7112 ; "None"
+
+
+The type or namespace 'Xml' does not exist in the namespace 'System'
+
+
+
+
+/pe insert
+/pe reposition
+/pe minimap
+/pe add
+/pe del
+/pe info

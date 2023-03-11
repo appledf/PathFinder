@@ -1,0 +1,163 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Frame name="MainFrame" toplevel="true" enableMouse="true" movable="true" parent="UIParent" hidden="true" frameStrata="MEDIUM">
+		<Size>
+			<AbsDimension x="140" y="200"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPRIGHT" relativeTo="Minimap" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="-100"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="btnClose" inherits="UIPanelButtonTemplate" parent="MainFrame" text="X">
+				<Size>
+					<AbsDimension x="22" y="22"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="MainFrame" relativePoint="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="-5" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						txtPos:ClearFocus();
+						MainFrame:Hide();
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="btnAdd" inherits="UIPanelButtonTemplate" parent="MainFrame" text="新增节点">
+				<Size>
+					<AbsDimension x="100" y="22"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="MainFrame" relativePoint="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="10" y="-25"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						txtPos:ClearFocus();
+						pe_add = not pe_add
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="btnDel" inherits="UIPanelButtonTemplate" parent="MainFrame" text="删除节点">
+				<Size>
+					<AbsDimension x="100" y="22"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="btnAdd" relativePoint="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="10" y="-25"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						txtPos:ClearFocus();
+						pe_del = not pe_del
+					</OnClick>
+				</Scripts>
+			</Button>
+			<EditBox name="txtPos" inherits="InputBoxTemplate" parent="MainFrame" text="-1">
+				<Size>
+					<AbsDimension x="90" y="22"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="btnDel" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						txtPos:ClearFocus();
+						pe_del = not pe_del
+					</OnClick>
+				</Scripts>
+			</EditBox>
+			<Button name="btnInsert" inherits="UIPanelButtonTemplate" parent="MainFrame" text="主点">
+				<Size>
+					<AbsDimension x="50" y="22"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="txtPos" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="10" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						txtPos:ClearFocus();
+						index = txtPos:GetText()
+						pe_insert = not pe_insert
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="btnInsertSecondary" inherits="UIPanelButtonTemplate" parent="MainFrame" text="副点">
+				<Size>
+					<AbsDimension x="50" y="22"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="btnInsert" relativePoint="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						txtPos:ClearFocus();
+						index = txtPos:GetText()
+						pe_secondary = not pe_secondary
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="btnShow" inherits="UIPanelButtonTemplate" parent="MainFrame" text="查看索引">
+				<Size>
+					<AbsDimension x="100" y="22"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="btnInsert" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						txtPos:ClearFocus();
+						pe_showindex = not pe_showindex
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="btnSave" inherits="UIPanelButtonTemplate" parent="MainFrame" text="保存数据">
+				<Size>
+					<AbsDimension x="100" y="22"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="btnShow" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						txtPos:ClearFocus();
+						pe_save = not pe_save
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>
